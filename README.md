@@ -1,6 +1,7 @@
 ![](assets/noun_60203_cc.png)
 
 # dotnet-SemVer.Stamp
+
 > Version your assemblies according to SemVer based on your VCS commit messages.
 
 ## Build status
