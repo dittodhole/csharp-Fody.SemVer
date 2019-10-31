@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <UsingTask TaskName="GetVersion" AssemblyFile="$(SemVerStamp_Assembly)" />
   <Target Name="GetVersion" BeforeTargets="CoreCompile;GetAssemblyVersion;GenerateNuspec;_GenerateRestoreProjectSpec;_GetOutputItemsFromPack" Condition="'$(SemVerStamp_Active)' == 'True'">
@@ -24,12 +24,12 @@
     <Message Text="_Version:                   $(SemVerStamp_Version)" />
     <PropertyGroup>
       <Version>$(SemVerStamp_Version)</Version>
-      <VersionPrefix>$(SemVerStamp_Version)</VersionPrefix>
+      <VersionPrefix>$(Version)</VersionPrefix>
       <VersionSuffix></VersionSuffix>
-      <PackageVersion>$(SemVerStamp_Version)</PackageVersion>
-      <InformationalVersion Condition="'$(InformationalVersion)' == ''">$(SemVerStamp_Version)</InformationalVersion>
-      <AssemblyVersion Condition="'$(AssemblyVersion)' == ''">$(SemVerStamp_Version)</AssemblyVersion>
-      <FileVersion Condition="'$(FileVersion)' == ''">$(SemVerStamp_Version)</FileVersion>
+      <PackageVersion>$(Version)</PackageVersion>
+      <InformationalVersion Condition="'$(InformationalVersion)' == ''">$(Version)</InformationalVersion>
+      <AssemblyVersion Condition="'$(AssemblyVersion)' == ''">$(Version)</AssemblyVersion>
+      <FileVersion Condition="'$(FileVersion)' == ''">$(Version)</FileVersion>
     </PropertyGroup>
     <Message Text="Version:                    $(Version)" />
     <Message Text="VersionPrefix:              $(VersionPrefix)" />
