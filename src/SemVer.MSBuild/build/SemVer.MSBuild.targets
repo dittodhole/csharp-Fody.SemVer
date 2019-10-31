@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0" encoding="utf-8"?>
 <Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <UsingTask TaskName="GetVersion" AssemblyFile="$(SemVerStamp_Assembly)" />
   <Target Name="GetVersion" BeforeTargets="CoreCompile;GetAssemblyVersion;GenerateNuspec;_GenerateRestoreProjectSpec;_GetOutputItemsFromPack" Condition="'$(SemVerStamp_Active)' == 'True'">
@@ -14,6 +14,10 @@
     <Message Text="_Assembly:                  $(SemVerStamp_Assembly)" />
     <Message Text="_BaseRevision:              $(SemVerStamp_BaseRevision)" />
     <Message Text="_BaseVersion:               $(SemVerStamp_BaseVersion)" />
+    <Message Text="_SourcePath:                $(SemVerStamp_SourcePath)" />
+    <Message Text="_BreakingChangeFormat:      $(SemVerStamp_BreakingChangeFormat)" />
+    <Message Text="_FeatureFormat:             $(SemVerStamp_FeatureFormat)" />
+    <Message Text="_PatchFormat:               $(SemVerStamp_PatchFormat)" />
     <GetVersion BreakingChangeFormat="$(SemVerStamp_BreakingChangeFormat)" FeatureFormat="$(SemVerStamp_FeatureFormat)" PatchFormat="$(SemVerStamp_PatchFormat)" BaseRevision="$(SemVerStamp_BaseRevision)" BaseVersion="$(SemVerStamp_BaseVersion)" SourcePath="$(SemVerStamp_SourcePath)">
       <Output TaskParameter="Version" PropertyName="SemVerStamp_Version" />
     </GetVersion>
